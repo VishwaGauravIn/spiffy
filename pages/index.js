@@ -14,7 +14,7 @@ export default function Home() {
 
       <main>
         <Header/>
-        <LocalView/>
+        {/* <LocalView/> */}
         <Toolbar/>
       </main>
     </>
