@@ -1,5 +1,7 @@
 import Head from "next/head";
-import App from "./components/LocalView";
+import Header from "./components/header/Header";
+import LocalView from "./components/localview/LocalView";
+import Toolbar from "./components/toolbar/Toolbar";
 
 export default function Home() {
   return (
@@ -11,8 +13,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <p className="text-cyan-500">better-screenshots</p>
-        <App/>
+        <Header/>
+        <LocalView/>
+        <Toolbar/>
       </main>
     </>
   );

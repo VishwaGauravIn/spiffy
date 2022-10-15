@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 const getColors = require("get-image-colors");
 
-export default function App() {
+export default function LocalView() {
   const [img, setImg] = useState();
   const [colors, setColors] = useState([]);
 
