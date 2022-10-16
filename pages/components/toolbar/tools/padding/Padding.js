@@ -9,16 +9,18 @@ export default function Padding() {
   const handleClickAway = () => {
     setIsVisible(false);
   };
+  //   Padding Persists on Session Switch
   useEffect(() => {
-    const plocal = localStorage.getItem("betterscreensort_p")
+    const plocal = localStorage.getItem("betterscreensort_p");
+    // If padding value exists in local storage, we will set its value to pval
     if (plocal) {
       setPVal(plocal);
       document.getElementById("my-node").style.padding = `${plocal}rem`;
     }
   }, []);
+
   function setPadding() {
     localStorage.setItem("betterscreensort_p", pVal);
-    console.log(pVal);
     document.getElementById("my-node").style.padding = `${pVal}rem`;
   }
   return (
