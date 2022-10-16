@@ -10,8 +10,17 @@ export default function Padding() {
     setIsVisible(false);
   };
   useEffect(() => {
+    const plocal = localStorage.getItem("betterscreensort_p")
+    if (plocal) {
+      setPVal(plocal);
+      document.getElementById("my-node").style.padding = `${plocal}rem`;
+    }
+  }, []);
+  function setPadding() {
+    localStorage.setItem("betterscreensort_p", pVal);
+    console.log(pVal);
     document.getElementById("my-node").style.padding = `${pVal}rem`;
-  }, [pVal]);
+  }
   return (
     <>
       <div
@@ -58,7 +67,7 @@ export default function Padding() {
                       type="range"
                       min={0}
                       max={5}
-                      onChange={(e) => setPVal(e.target.value)}
+                      onChange={(e) => setPVal(e.target.value) & setPadding()}
                       step={0.25}
                       value={pVal}
                       className="w-6/12 accent-indigo-500 dark:accent-indigo-300 -mb-1.5"
