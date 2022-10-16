@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Background from "./tools/background/Background";
 import Corners from "./tools/corners/Corners";
+import Padding from "./tools/padding/Padding";
 
 export default function Toolbar({ onImageChange }) {
   return (
@@ -34,14 +35,9 @@ export default function Toolbar({ onImageChange }) {
                 Download
               </span>
             </button>
-            <Corners/>
-            <Background/>
-            <button className="transform p-3 flex flex-col font-semibold text-xs justify-center items-center rounded-full bg-indigo-300 text-indigo-900 ease-in-out duration-200 hover:bg-indigo-300/90 group outline-none active:scale-95 ring ring-indigo-900 dark:ring-0">
-              <ArrowsPointingOutIcon className="w-7 stroke-[1.5]" />
-              <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-indigo-300 text-indigo-900">
-                Padding
-              </span>
-            </button>
+            <Corners />
+            <Background />
+            <Padding />
           </div>
         </div>
         <input
