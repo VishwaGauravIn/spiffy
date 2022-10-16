@@ -1,14 +1,12 @@
 import React from "react";
 import {
   ArrowDownTrayIcon,
-  ArrowsPointingOutIcon,
   ArrowUpTrayIcon,
-  CursorArrowRippleIcon,
-  PaintBrushIcon,
 } from "@heroicons/react/24/outline";
 import Background from "./tools/background/Background";
 import Corners from "./tools/corners/Corners";
 import Padding from "./tools/padding/Padding";
+import Shadow from "./tools/shadow/Shadow";
 
 export default function Toolbar({ onImageChange }) {
   return (
@@ -38,6 +36,7 @@ export default function Toolbar({ onImageChange }) {
             <Corners />
             <Background />
             <Padding />
+            <Shadow />
           </div>
         </div>
         <input
