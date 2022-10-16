@@ -34,7 +34,7 @@ export default function Home() {
         <Header />
         <Parent img={img} />
         {/* <LocalView/> */}
-        <Toolbar onImageChange={onImageChange} />
+        <Toolbar onImageChange={onImageChange} img={img} />
       </main>
     </>
   );
