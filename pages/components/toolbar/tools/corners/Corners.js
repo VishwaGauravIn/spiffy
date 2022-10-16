@@ -50,34 +50,79 @@ export default function Corners() {
                       onClick={() => setIsVisible(false)}
                     ></div>
                   </div>
-                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-4 max-h-96 w-full text-zinc-600 dark:text-blue-200 transition-color duration-300 ease-in-out overflow-y-scroll flex flex-wrap justify-center gap-4">
+                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-fuchsia-500 dark:text-fuchsia-200 transition-color duration-300 ease-in-out overflow-y-scroll flex flex-wrap justify-center gap-4">
                     {/* content */}
-                    <div className="" onClick={() => setBorderRadius(0)}>
-                      none
+                    {/* None */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      None
                     </div>
-                    <div className="" onClick={() => setBorderRadius(0.25)}>
-                      basic
+                    {/* Basic */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0.25)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      Basic
                     </div>
-                    <div className="" onClick={() => setBorderRadius(0.125)}>
-                      sm
+                    {/* Small */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0.125)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-sm group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      Small
                     </div>
-                    <div className="" onClick={() => setBorderRadius(0.375)}>
-                      md
+                    {/* Medium */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0.375)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-md group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      Medium
                     </div>
-                    <div className="" onClick={() => setBorderRadius(0.5)}>
-                      lg
+                    {/* Large */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0.5)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-lg group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      Large
                     </div>
-                    <div className="" onClick={() => setBorderRadius(0.75)}>
-                      xl
+                    {/* XL */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(0.75)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-xl group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      XL
                     </div>
-                    <div className="" onClick={() => setBorderRadius(1)}>
-                      2xl
+                    {/* 2XL */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(1)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-2xl group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      2XL
                     </div>
-                    <div className="" onClick={() => setBorderRadius(1.5)}>
-                      3xl
+                    {/* 3XL */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(1.5)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-3xl group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      3XL
                     </div>
-                    <div className="" onClick={() => setBorderRadius(9999)}>
-                      full
+                    {/* Full */}
+                    <div
+                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                      onClick={() => setBorderRadius(9999)}
+                    >
+                      <div className="w-16 aspect-square bg-fuchsia-500 dark:bg-fuchsia-300 rounded-full group-hover:bg-fuchsia-400 dark:bg-fuchsia-300/90 group-active:scale-95 ease-in-out duration-200 mb-1" />
+                      Full
                     </div>
                   </div>
                 </div>
