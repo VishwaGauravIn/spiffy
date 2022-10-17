@@ -62,8 +62,9 @@ export default function Magic({ img }) {
                   </div>
                   <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-indigo-500 dark:text-indigo-300 transition-color duration-300 ease-in-out overflow-y-auto flex flex-wrap justify-center gap-4 items-center">
                     {/* content */}
-                    {colors.map((color) => (
+                    {colors.map((color, index) => (
                       <svg
+                        key={index}
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill={color.hex()}
