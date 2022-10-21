@@ -1,5 +1,5 @@
 import { SparklesIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 const getColors = require("get-image-colors");
 
@@ -10,17 +10,14 @@ export default function Magic({ img }) {
   const handleClickAway = () => {
     setIsVisible(false);
   };
-  if (img !== undefined) {
-    console.log(img);
-    getColors(img).then((colors) => {
-      // `colors` is an array of color objects
-      setColors(colors);
-    });
-  }
-  function setPadding() {
-    localStorage.setItem("betterscreensort_p", pVal);
-    document.getElementById("my-node").style.padding = `${pVal}rem`;
-  }
+  useEffect(() => {
+    if (img !== undefined) {
+      getColors(img).then((colors) => {
+        // `colors` is an array of color objects
+        setColors(colors);
+      });
+    }
+  }, []);
   return (
     <>
       <div
