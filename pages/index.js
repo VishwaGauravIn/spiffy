@@ -15,15 +15,6 @@ export default function Home() {
       setImg(URL.createObjectURL(file));
     }
   };
-  useEffect(() => {
-    if (img !== undefined) {
-      console.log(img);
-      getImageColors(img).then((colors) => {
-        // `colors` is an array of color objects
-        setColors(colors);
-      });
-    }
-  }, [img]);
   return (
     <>
       <Head>
@@ -33,7 +24,7 @@ export default function Home() {
       </Head>
 
       <main className="min-h-[100vh]">
-        <Header />
+        <Header img={img} />
         <Parent img={img} />
         {/* <LocalView/> */}
         <Toolbar onImageChange={onImageChange} img={img} />

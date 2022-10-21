@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .cursive {
-    font-family: 'Nabla', cursive;
+  font-family: "Nabla", cursive;
 }
 
 body {
@@ -14,4 +14,11 @@ body {
 
 .dark body {
   background-color: #252728;
+}
+
+.placeholder {
+  background-image: url("/placeholder.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

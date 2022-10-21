@@ -13,8 +13,7 @@ export default function Parent({ img }) {
         <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6">
           <img
             id="parent-img"
-            src={img || "/placeholder.svg"}
-            placeholder="/placeholder.svg"
+            src={img}
             alt=""
             className={`max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
               imgW / imgH
