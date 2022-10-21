@@ -26,10 +26,10 @@ export default function Header() {
     }
   }
   return (
-    <div className="w-full flex items-center relative justify-between p-6 text-yellow-900 dark:text-yellow-300 bg-white">
+    <div className="w-full flex items-center relative justify-between p-6 text-yellow-900 dark:text-yellow-300">
       <span className="flex items-center">
         {/* <img src="/logo.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" /> */}
-        <p className="text-2xl sm:text-4xl font-medium text-zinc-300 cursive rounded-md px-1 bg-white">
+        <p className="text-2xl sm:text-4xl font-medium text-zinc-300 cursive rounded-md px-1">
           SPIFFY
         </p>
       </span>
