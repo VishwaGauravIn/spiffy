@@ -7,7 +7,6 @@ import Background from "./tools/background/Background";
 import Corners from "./tools/corners/Corners";
 import Padding from "./tools/padding/Padding";
 import Shadow from "./tools/shadow/Shadow";
-import Magic from "./tools/magic/Magic";
 
 export default function Toolbar({ onImageChange, img }) {
   return (
@@ -44,10 +43,9 @@ export default function Toolbar({ onImageChange, img }) {
                   </span>
                 </button>
                 <Corners />
-                <Background />
+                <Background img={img} />
                 <Padding />
                 <Shadow />
-                <Magic img={img} />
               </div>
             </div>
           )}
