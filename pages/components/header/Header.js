@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import {
+  MoonIcon,
+  SunIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function Header() {
@@ -23,28 +27,31 @@ export default function Header() {
     }
   }
   return (
-    <div className="flex flex-row flex-wrap relative items-center p-4 text-rose-400 dark:text-rose-200">
-      <Link href="/home">
-        <div className="flex items-center group cursor-pointer">
-          <img
-            src="/logo.png"
-            alt=""
-            className="w-12 group-item group-hover:animate-pulse pointer-events-auto select-none mr-4"
-            draggable={false}
-          />
-          <p className="text-3xl font-semibold">Better Screensort</p>
-        </div>
-      </Link>
-      <button
-        className="absolute right-4 active:scale-75 transition-transform ease-in-out outline-none"
-        onClick={changeTheme}
-      >
-        {isDarkMode ? (
-          <SunIcon className="w-7 stroke-[1.5] mr-0.5" />
-        ) : (
-          <MoonIcon className="w-7 stroke-[1.5]" />
-        )}
-      </button>
+    <div className="w-full flex items-center relative justify-between p-6 text-rose-400 dark:text-rose-300">
+      <span className="flex items-center">
+        <img src="/logo.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" />
+        <p className="text-2xl sm:text-4xl font-medium text-malibu-400">Better Screenshots</p>
+      </span>
+      <div className="absolute right-6 flex">
+        <button
+          className="active:scale-75 transition-transform ease-in-out outline-none sm:mr-4"
+          onClick={changeTheme}
+        >
+          {isDarkMode ? (
+            <SunIcon className="w-7 stroke-[1.5] mr-0.5" />
+          ) : (
+            <MoonIcon className="w-7 stroke-[1.5]" />
+          )}
+        </button>
+        <a
+          href="https://github.com/VishwaGauravIn/better-screenshots"
+          className="flex justify-center items-center p-3 px-6 bg-rose-300 text-rose-900 font-bold rounded-full shadow-lg hover:shadow-rose-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 scale-75 -mr-6 md:mr-0 sm:scale-100 outline-none"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub <ArrowTopRightOnSquareIcon className="w-6 ml-2 stroke-2" />
+        </a>
+      </div>
     </div>
   );
 }
