@@ -27,7 +27,7 @@ export default function Header() {
     }
   }
   return (
-    <div className="w-full flex items-center relative justify-between p-6 text-rose-400 dark:text-rose-300">
+    <div className="w-full flex items-center relative justify-between p-6 text-rose-900 dark:text-rose-300">
       <span className="flex items-center">
         <img src="/logo.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" />
         <p className="text-2xl sm:text-4xl font-medium text-malibu-400">Better Screenshots</p>
@@ -38,14 +38,14 @@ export default function Header() {
           onClick={changeTheme}
         >
           {isDarkMode ? (
-            <SunIcon className="w-7 stroke-[1.5] mr-0.5" />
+            <SunIcon className="w-7 stroke-[2] mr-0.5" />
           ) : (
-            <MoonIcon className="w-7 stroke-[1.5]" />
+            <MoonIcon className="w-7 stroke-[2] fill-rose-200" />
           )}
         </button>
         <a
           href="https://github.com/VishwaGauravIn/better-screenshots"
-          className="flex justify-center items-center p-3 px-6 bg-rose-300 text-rose-900 font-bold rounded-full shadow-lg hover:shadow-rose-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 scale-75 -mr-6 md:mr-0 sm:scale-100 outline-none"
+          className="flex justify-center items-center p-3 px-6 bg-rose-300 text-rose-900 font-bold rounded-full shadow-lg hover:shadow-rose-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 scale-75 -mr-6 md:mr-0 sm:scale-100 outline-none ring ring-rose-900 dark:ring-0"
           target="_blank"
           rel="noopener noreferrer"
         >
