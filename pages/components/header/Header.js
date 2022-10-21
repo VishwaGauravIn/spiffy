@@ -4,7 +4,6 @@ import {
   SunIcon,
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
-import Link from "next/link";
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -29,8 +28,10 @@ export default function Header() {
   return (
     <div className="w-full flex items-center relative justify-between p-6 text-rose-900 dark:text-rose-300">
       <span className="flex items-center">
-        <img src="/logo.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" />
-        <p className="text-2xl sm:text-4xl font-medium text-malibu-400">Better Screenshots</p>
+        {/* <img src="/logo.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" /> */}
+        <p className="text-2xl sm:text-4xl font-medium text-zinc-300 cursive bg-zinc-800 rounded-md px-1">
+          SPIFFY
+        </p>
       </span>
       <div className="absolute right-6 flex">
         <button

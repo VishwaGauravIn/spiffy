@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body{
-    background-color: #ffffff;
+.cursive {
+    font-family: 'Nabla', cursive;
 }
 
-.dark body{
-    background-color: #252728;
+body {
+  background-color: #ffffff;
+}
+
+.dark body {
+  background-color: #252728;
 }
