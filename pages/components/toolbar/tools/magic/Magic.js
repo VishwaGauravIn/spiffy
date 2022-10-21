@@ -65,7 +65,7 @@ export default function Magic({ img }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill={color.hex()}
-                        className="w-6 h-6 inline"
+                        className="w-8 h-8 inline"
                         onClick={() =>
                           (document.getElementById(
                             "my-node"

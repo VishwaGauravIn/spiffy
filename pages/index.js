@@ -10,8 +10,10 @@ export default function Home() {
   const [colors, setColors] = useState([]);
 
   const onImageChange = (e) => {
-    const [file] = e.target.files;
-    setImg(URL.createObjectURL(file));
+    if (e.target.files.length !== 0) {
+      const [file] = e.target.files;
+      setImg(URL.createObjectURL(file));
+    }
   };
   useEffect(() => {
     if (img !== undefined) {
