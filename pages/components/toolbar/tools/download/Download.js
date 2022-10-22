@@ -6,24 +6,22 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 export default function Download() {
   function downloadNormal() {
     document.getElementById("my-node").style.transform = "scale(1)"; //imp
-    setTimeout(() => {
-      let style = { borderRadius: 0 };
-      // JPG
-      htmlToImage
-        .toJpeg(
-          document.getElementById("my-node"),
-          { quality: 1 },
-          {
-            style: style,
-          }
-        )
-        .then(function (dataUrl) {
-          var link = document.createElement("a");
-          link.download = "spiffy.jpeg";
-          link.href = dataUrl;
-          link.click();
-        });
-    }, 500);
+    let style = { borderRadius: 0 };
+    // JPG
+    htmlToImage
+      .toJpeg(
+        document.getElementById("my-node"),
+        { quality: 1 },
+        {
+          style: style,
+        }
+      )
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "spiffy.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
   }
   return (
     <button

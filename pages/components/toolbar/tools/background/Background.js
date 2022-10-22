@@ -21,7 +21,6 @@ export default function Background({ img }) {
   }, [colors]);
   useEffect(() => {
     if (colors.length !== 0) {
-      console.log(colors);
       document.getElementById(
         "my-node"
       ).style.backgroundColor = `rgb( ${colors[0]._rgb[0]} , ${colors[0]._rgb[1]} , ${colors[0]._rgb[2]})`;
