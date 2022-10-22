@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Draggable from "react-draggable";
 
 export default function Parent({ img }) {
   const [imgH, setImgH] = useState(0);
@@ -11,20 +12,23 @@ export default function Parent({ img }) {
     <div className="h-[80vh] w-full flex justify-center items-center overflow-auto">
       <div className="rounded-md overflow-hidden">
         <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6">
-          <img
-            id="parent-img"
-            src={img || "/placeholder.svg"}
-            alt=""
-            className={
-              img
-                ? `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
-                    imgW / imgH
-                  }]`
-                : `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
-                    imgW / imgH
-                  }] dark:invert dark:saturate-200 dark:sepia`
-            }
-          />
+          <Draggable>
+            <img
+              id="parent-img"
+              src={img || "/placeholder.svg"}
+              alt=""
+              draggable={false}
+              className={
+                img
+                  ? `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
+                      imgW / imgH
+                    }] cursor-move`
+                  : `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
+                      imgW / imgH
+                    }] dark:invert dark:saturate-200 dark:sepia cursor-move`
+              }
+            />
+          </Draggable>
         </div>
       </div>
     </div>
