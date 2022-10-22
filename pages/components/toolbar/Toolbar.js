@@ -1,12 +1,10 @@
 import React from "react";
-import {
-  ArrowDownTrayIcon,
-  ArrowUpTrayIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import Background from "./tools/background/Background";
 import Corners from "./tools/corners/Corners";
 import Padding from "./tools/padding/Padding";
 import Shadow from "./tools/shadow/Shadow";
+import Download from "./tools/download/Download";
 
 export default function Toolbar({ onImageChange, img }) {
   return (
@@ -36,12 +34,7 @@ export default function Toolbar({ onImageChange, img }) {
                     Upload
                   </span>
                 </button>
-                <button className="flex transform p-3 flex-col font-semibold text-xs justify-center items-center rounded-full bg-emerald-300 text-emerald-900 ease-in-out duration-200 hover:bg-emerald-300/90 group outline-none active:scale-95 ring ring-emerald-900 dark:ring-0">
-                  <ArrowDownTrayIcon className="w-7 stroke-[1.5]" />
-                  <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-emerald-300 text-emerald-900">
-                    Download
-                  </span>
-                </button>
+                <Download />
                 <Corners />
                 <Background img={img} />
                 <Padding />
