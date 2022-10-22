@@ -1,9 +1,9 @@
-import getImageColors from "get-image-colors";
 import Head from "next/head";
 import { useState } from "react";
 import Header from "./components/header/Header";
 import Parent from "./components/parent/Parent";
 import Toolbar from "./components/toolbar/Toolbar";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   const [img, setImg] = useState();
@@ -23,11 +23,12 @@ export default function Home() {
       </Head>
 
       <main className="min-h-[100vh]">
-        <Header/>
+        <Header />
         <Parent img={img} />
         {/* <LocalView/> */}
         <Toolbar onImageChange={onImageChange} img={img} />
       </main>
+      <ToastContainer theme="colored" />
     </>
   );
 }

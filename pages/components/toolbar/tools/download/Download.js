@@ -3,7 +3,7 @@ import React from "react";
 import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 export default function Download() {
   const [isVisible, setIsVisible] = useState(false);
@@ -186,7 +186,6 @@ export default function Download() {
           </ClickAwayListener>
         </div>
       )}
-      <ToastContainer theme="colored" />
     </>
   );
 }
