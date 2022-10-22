@@ -34,6 +34,7 @@ export default function Download() {
           link.click();
           toast.dismiss("start");
           toast.success("Downloaded Successfully!");
+          setIsDownloadButtonDisabled(false)
         });
       });
   }
@@ -76,12 +77,10 @@ export default function Download() {
     });
   return (
     <>
-      <div
-        className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200"
-        onClick={() => setIsVisible(true)}
-      >
+      <div className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200">
         <button
-          className="flex transform p-3 flex-col font-semibold text-xs justify-center items-center rounded-full bg-emerald-300 text-emerald-900 ease-in-out duration-200 hover:bg-emerald-300/90 group outline-none active:scale-95 ring ring-emerald-900 dark:ring-0"
+          className="flex transform p-3 flex-col font-semibold text-xs justify-center items-center rounded-full bg-emerald-300 text-emerald-900 ease-in-out duration-200 hover:bg-emerald-300/90 group outline-none active:scale-95 ring ring-emerald-900 dark:ring-0 disabled:cursor-not-allowed"
+          onClick={() => setIsVisible(true)}
           disabled={isDownloadButtonDisabled}
         >
           <ArrowDownTrayIcon className="w-7 stroke-[1.5]" />
