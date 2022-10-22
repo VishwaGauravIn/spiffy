@@ -13,11 +13,17 @@ export default function Parent({ img }) {
         <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6">
           <img
             id="parent-img"
-            src={img}
+            src={img || "/placeholder.svg"}
             alt=""
-            className={`max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
-              imgW / imgH
-            }]`}
+            className={
+              img
+                ? `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
+                    imgW / imgH
+                  }]`
+                : `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
+                    imgW / imgH
+                  }] dark:invert dark:saturate-200 dark:sepia`
+            }
           />
         </div>
       </div>

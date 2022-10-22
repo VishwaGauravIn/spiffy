@@ -13,18 +13,20 @@ export default function Background({ img }) {
   };
   useEffect(() => {
     if (img !== undefined) {
-      getColors(img)
-        .then((clr) => {
-          // `colors` is an array of color objects
-          setColors(clr);
-        })
-        .then(() => {
-          document.getElementById(
-            "my-node"
-          ).style.backgroundColor = `rgb(${colors[0]._rgb[0]},${colors[0]._rgb[1]},${colors[0]._rgb[2]})`;
-        });
+      getColors(img).then((clr) => {
+        // `colors` is an array of color objects
+        setColors(clr);
+      });
     }
-  }, []);
+  }, [colors]);
+  useEffect(() => {
+    if (colors.length !== 0) {
+      console.log(colors);
+      document.getElementById(
+        "my-node"
+      ).style.backgroundColor = `rgb( ${colors[0]._rgb[0]} , ${colors[0]._rgb[1]} , ${colors[0]._rgb[2]})`;
+    }
+  }, [colors.length !== 0]);
   return (
     <>
       <div

@@ -5,7 +5,7 @@ import {
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Header({img}) {
+export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   //   User prefrence is stored in local storage and checked when the component is loaded
   useEffect(() => {
@@ -14,13 +14,6 @@ export default function Header({img}) {
       document.documentElement.classList.add("dark");
     }
   }, []);
-  useEffect(() => {
-    if (!img) {
-      document.getElementById("parent-img").src = isDarkMode
-        ? "/placeholder_dark.svg"
-        : "/placeholder.svg";
-    }
-  }, [isDarkMode]);
   function changeTheme() {
     if (isDarkMode) {
       setIsDarkMode(false);

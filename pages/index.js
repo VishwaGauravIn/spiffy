@@ -1,13 +1,12 @@
 import getImageColors from "get-image-colors";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./components/header/Header";
 import Parent from "./components/parent/Parent";
 import Toolbar from "./components/toolbar/Toolbar";
 
 export default function Home() {
   const [img, setImg] = useState();
-  const [colors, setColors] = useState([]);
 
   const onImageChange = (e) => {
     if (e.target.files.length !== 0) {
@@ -24,7 +23,7 @@ export default function Home() {
       </Head>
 
       <main className="min-h-[100vh]">
-        <Header img={img} />
+        <Header/>
         <Parent img={img} />
         {/* <LocalView/> */}
         <Toolbar onImageChange={onImageChange} img={img} />
