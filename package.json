@@ -17,6 +17,7 @@
     "react-click-away-listener": "^2.2.2",
     "react-dom": "18.2.0",
     "react-draggable": "^4.4.5",
+    "react-toastify": "^9.0.8",
     "react-use-downloader": "^1.2.0"
   },
   "devDependencies": {

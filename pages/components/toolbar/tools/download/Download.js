@@ -3,15 +3,20 @@ import React from "react";
 import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Download() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isDownloadButtonDisabled, setIsDownloadButtonDisabled] =
+    useState(false);
   // Click away handle
   const handleClickAway = () => {
     setIsVisible(false);
   };
   function downloadCustom(size) {
-    setIsVisible(false)
+    setIsVisible(false);
+    setIsDownloadButtonDisabled(true);
+    toast.info("Starting Download...", { toastId: "start" });
     document.getElementById("my-node").style.transform = "scale(1)"; //imp
     let width = document.getElementById("parent-img").offsetWidth;
     let height = document.getElementById("parent-img").offsetHeight;
@@ -27,6 +32,8 @@ export default function Download() {
           link.download = "spiffy.png";
           link.href = dataUri;
           link.click();
+          toast.dismiss("start");
+          toast.success("Downloaded Successfully!");
         });
       });
   }
@@ -73,7 +80,10 @@ export default function Download() {
         className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200"
         onClick={() => setIsVisible(true)}
       >
-        <button className="flex transform p-3 flex-col font-semibold text-xs justify-center items-center rounded-full bg-emerald-300 text-emerald-900 ease-in-out duration-200 hover:bg-emerald-300/90 group outline-none active:scale-95 ring ring-emerald-900 dark:ring-0">
+        <button
+          className="flex transform p-3 flex-col font-semibold text-xs justify-center items-center rounded-full bg-emerald-300 text-emerald-900 ease-in-out duration-200 hover:bg-emerald-300/90 group outline-none active:scale-95 ring ring-emerald-900 dark:ring-0"
+          disabled={isDownloadButtonDisabled}
+        >
           <ArrowDownTrayIcon className="w-7 stroke-[1.5]" />
           <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-emerald-300 text-emerald-900">
             Download
@@ -176,6 +186,7 @@ export default function Download() {
           </ClickAwayListener>
         </div>
       )}
+      <ToastContainer theme="colored" />
     </>
   );
 }
