@@ -645,6 +645,22 @@ export default function Background({ img }) {
                         }
                       />
                     </div>
+                    <div className="flex justify-center items-center mt-10 mb-6">
+                      <p className="font-semibold text-base mr-4">Custom Color: </p>
+                      <input
+                        type="color"
+                        name=""
+                        id=""
+                        onChange={(e) => {
+                          (document.getElementById(
+                            "my-node"
+                          ).style.backgroundColor = e.target.value) &
+                            (document.getElementById(
+                              "my-node"
+                            ).style.backgroundImage = "");
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </ClickAwayListener>
