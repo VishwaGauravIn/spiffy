@@ -4,6 +4,7 @@ import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import { toast } from "react-toastify";
+import imgConverter from "image-converter-pro";
 
 export default function Download() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,53 +29,18 @@ export default function Download() {
       })
       .then(function (dataUrl) {
         var link = document.createElement("a");
-        svgToPng(dataUrl, width, height, size / height).then((dataUri) => {
-          link.download = "spiffy.png";
-          link.href = dataUri;
-          link.click();
-          toast.dismiss("start");
-          toast.success("Downloaded Successfully!");
-          setIsDownloadButtonDisabled(false)
-        });
+        imgConverter(dataUrl, width, height, "png", size / height).then(
+          (dataUri) => {
+            link.download = "spiffy.png";
+            link.href = dataUri;
+            link.click();
+            toast.dismiss("start");
+            toast.success("Downloaded Successfully!");
+            setIsDownloadButtonDisabled(false);
+          }
+        );
       });
   }
-  const svgToPng = (svgDataurl, width, height, scale) =>
-    new Promise((resolve, reject) => {
-      let canvas;
-      let ctx;
-      let img;
-
-      img = new Image();
-      img.src = svgDataurl;
-      img.onload = () => {
-        canvas = document.createElement("canvas");
-        canvas.width = img.width * scale;
-        canvas.height = img.height * scale;
-        ctx = canvas.getContext("2d");
-        ctx.drawImage(
-          img,
-          0,
-          0,
-          img.width,
-          img.height,
-          0,
-          0,
-          width * scale,
-          height * scale
-        );
-
-        img = new Image();
-        img.src = canvas.toDataURL("image/png");
-        img.onload = () => {
-          canvas = document.createElement("canvas");
-          canvas.width = width * scale;
-          canvas.height = height * scale;
-          ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0);
-          resolve(canvas.toDataURL("image/png"));
-        };
-      };
-    });
   return (
     <>
       <div className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200">
