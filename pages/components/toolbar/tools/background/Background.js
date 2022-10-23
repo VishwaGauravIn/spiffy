@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import Color from "./Color";
 const getColors = require("get-image-colors");
+var rgb2hex = require("rgb2hex");
 
 export default function Background({ img }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -646,11 +647,25 @@ export default function Background({ img }) {
                       />
                     </div>
                     <div className="flex justify-center items-center mt-10 mb-6">
-                      <p className="font-semibold text-base mr-4">Custom Color: </p>
+                      <p className="font-semibold text-base mr-4">
+                        Custom Color:
+                      </p>
                       <input
                         type="color"
                         name=""
                         id=""
+                        defaultValue={
+                          rgb2hex(
+                            document.getElementById("my-node").style
+                              .backgroundColor
+                          ).hex
+                        }
+                        onClick={(e) =>
+                          (e.target.value = rgb2hex(
+                            document.getElementById("my-node").style
+                              .backgroundColor
+                          ).hex)
+                        }
                         onChange={(e) => {
                           (document.getElementById(
                             "my-node"
