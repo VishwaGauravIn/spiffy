@@ -50,7 +50,7 @@ export default function Download() {
           disabled={isDownloadButtonDisabled}
         >
           <ArrowDownTrayIcon className="w-7 stroke-[1.5]" />
-          <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-emerald-300 text-emerald-900">
+          <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-emerald-300 text-emerald-900">
             Download
           </span>
         </button>

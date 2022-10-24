@@ -5,6 +5,7 @@ import Corners from "./tools/corners/Corners";
 import Padding from "./tools/padding/Padding";
 import Shadow from "./tools/shadow/Shadow";
 import Download from "./tools/download/Download";
+import Resize from "./tools/resize/Resize";
 
 export default function Toolbar({ onImageChange, img }) {
   return (
@@ -24,19 +25,20 @@ export default function Toolbar({ onImageChange, img }) {
           {/* All options are visible when an image is selected */}
           {img && (
             <div className="flex gap-4 overflow-x-auto pb-6 pt-2">
-              <div className="w-max gap-4 flex h-max px-4">
+              <div className="w-max gap-6 flex h-max px-4">
                 <button
                   className="transform p-3 flex flex-col font-semibold text-xs justify-center items-center rounded-full bg-yellow-300 text-yellow-900 ease-in-out duration-200 hover:bg-yellow-300/90 group outline-none active:scale-95 ring ring-yellow-900 dark:ring-0"
                   onClick={() => document.getElementById("file_select").click()}
                 >
                   <ArrowUpTrayIcon className="w-7 stroke-[1.5]" />
-                  <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-yellow-300 text-yellow-900">
+                  <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-yellow-300 text-yellow-900">
                     Upload
                   </span>
                 </button>
                 <Download />
-                <Corners />
                 <Background img={img} />
+                <Resize />
+                <Corners />
                 <Padding />
                 <Shadow />
               </div>

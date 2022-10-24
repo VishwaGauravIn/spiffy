@@ -1,39 +1,25 @@
-import { ViewfinderCircleIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
+import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
+import Resizer from "./Resizer";
 
-export default function Padding() {
+export default function Resize() {
   const [isVisible, setIsVisible] = useState(false);
-  const [pVal, setPVal] = useState(1.5);
+  // TODO: uncomment handle
   // Click away handle
   const handleClickAway = () => {
-    setIsVisible(false);
+    // setIsVisible(false);
   };
-  //   Padding Persists on Session Switch
-  useEffect(() => {
-    const plocal = localStorage.getItem("betterscreensort_p");
-    // If padding value exists in local storage, we will set its value to pval
-    if (plocal) {
-      setPVal(plocal);
-      document.getElementById("my-node").style.padding = `${plocal}rem`;
-    }
-  }, []);
-
-  function setPadding() {
-    localStorage.setItem("betterscreensort_p", pVal);
-    document.getElementById("my-node").style.padding = `${pVal}rem`;
-    console.log(pVal)
-  }
   return (
     <>
       <div
         className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200"
         onClick={() => setIsVisible(true)}
       >
-        <button className="transform p-3 flex flex-col font-semibold text-xs justify-center items-center rounded-full bg-indigo-300 text-indigo-900 ease-in-out duration-200 hover:bg-indigo-300/90 group outline-none active:scale-95 ring ring-indigo-900 dark:ring-0">
-          <ViewfinderCircleIcon className="w-7 stroke-[1.5]" />
-          <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-indigo-300 text-indigo-900">
-            Padding
+        <button className="transform p-3 flex flex-col shadow font-semibold text-xs justify-center items-center rounded-full bg-sky-300 text-sky-900 ease-in-out duration-200 hover:bg-sky-300/90 group outline-none active:scale-95 ring ring-sky-900 dark:ring-0">
+          <ArrowsPointingOutIcon className="w-7 stroke-[1.5]" />
+          <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-sky-300 text-sky-900">
+            Resize
           </span>
         </button>
       </div>
@@ -63,19 +49,9 @@ export default function Padding() {
                       onClick={() => setIsVisible(false)}
                     ></div>
                   </div>
-                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-indigo-500 dark:text-indigo-300 transition-color duration-300 ease-in-out overflow-y-auto flex flex-wrap justify-center gap-4 items-center">
+                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-zinc-500 dark:text-zinc-200 transition-color duration-300 ease-in-out overflow-y-auto flex flex-wrap justify-center gap-4">
                     {/* content */}
-                    0rem
-                    <input
-                      type="range"
-                      min={0}
-                      max={5}
-                      onChange={(e) => setPVal(e.target.value) & setPadding()}
-                      step={0.25}
-                      value={pVal}
-                      className="w-6/12 accent-indigo-500 dark:accent-indigo-300 -mb-1.5"
-                    />
-                    5rem
+                    <Resizer app="instagram" label="Instagram Story" aspect={9/16} />
                   </div>
                 </div>
               </ClickAwayListener>

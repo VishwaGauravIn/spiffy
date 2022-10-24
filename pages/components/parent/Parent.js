@@ -11,7 +11,7 @@ export default function Parent({ img }) {
   return (
     <div className="h-[80vh] w-full flex justify-center items-center overflow-auto">
       <div className="rounded-md overflow-hidden">
-        <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6justify-center items-center">
+        <div id="my-node" className="relative max-w-[80vw] sm:h-96 p-6 flex justify-center items-center">
           <Draggable>
             <img
               id="parent-img"

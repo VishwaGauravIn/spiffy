@@ -35,7 +35,7 @@ export default function Background({ img }) {
       >
         <button className="transform p-3 flex flex-col font-semibold text-xs justify-center items-center rounded-full bg-rose-300 text-rose-900 ease-in-out duration-200 hover:bg-rose-300/90 group outline-none active:scale-95 ring ring-rose-900 dark:ring-0">
           <PaintBrushIcon className="w-7 stroke-[1.5]" />
-          <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-rose-300 text-rose-900">
+          <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-rose-300 text-rose-900">
             Background
           </span>
         </button>

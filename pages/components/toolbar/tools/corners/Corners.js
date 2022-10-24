@@ -19,7 +19,7 @@ export default function Corners() {
       >
         <button className="transform p-3 flex flex-col font-semibold text-xs justify-center items-center rounded-full bg-fuchsia-300 text-fuchsia-900 ease-in-out duration-200 hover:bg-fuchsia-300/90 group outline-none active:scale-95 ring ring-fuchsia-900 dark:ring-0">
           <CursorArrowRippleIcon className="w-7 stroke-[1.5]" />
-          <span className="absolute -bottom-5 opacity-70 group-hover:opacity-100 dark:text-fuchsia-300 text-fuchsia-900">
+          <span className="absolute -bottom-6 opacity-70 group-hover:opacity-100 dark:text-fuchsia-300 text-fuchsia-900">
             Corners
           </span>
         </button>
