@@ -126,6 +126,22 @@ export default function Resize() {
                       label="LinkedIn Post"
                       aspect={1200 / 627}
                     />
+                    <Resizer
+                      app="google-play"
+                      label="Portrait"
+                      aspect={9 / 16}
+                    />
+                    <Resizer
+                      app="google-play"
+                      label="Landscape"
+                      aspect={16 / 9}
+                    />
+                    <Resizer app="app-store" label="Portrait" aspect={9 / 16} />
+                    <Resizer
+                      app="app-store"
+                      label="Landscape"
+                      aspect={16 / 9}
+                    />
                   </div>
                 </div>
               </ClickAwayListener>
