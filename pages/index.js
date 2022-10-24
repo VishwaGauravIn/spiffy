@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
-import Header from "./components/header/Header";
-import Parent from "./components/parent/Parent";
-import Toolbar from "./components/toolbar/Toolbar";
+import Header from "../components/header/Header";
+import Parent from "../components/parent/Parent";
+import Toolbar from "../components/toolbar/Toolbar";
 import { ToastContainer } from "react-toastify";
 import Script from "next/script";
 
