@@ -19,8 +19,8 @@ export default function Download() {
     setIsDownloadButtonDisabled(true);
     toast.info("Starting Download...", { toastId: "start" });
     document.getElementById("my-node").style.transform = "scale(1)"; //imp
-    let width = document.getElementById("parent-img").offsetWidth;
-    let height = document.getElementById("parent-img").offsetHeight;
+    let width = document.getElementById("my-node").offsetWidth;
+    let height = document.getElementById("my-node").offsetHeight;
     let style = { borderRadius: 0 };
     // JPG
     htmlToImage
@@ -89,7 +89,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(480)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         SD
                       </div>
                       480p
@@ -99,7 +99,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(720)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         HD
                       </div>
                       720p
@@ -109,7 +109,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(1080)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         FHD
                       </div>
                       1080p
@@ -119,7 +119,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(1440)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         2K
                       </div>
                       1440p
@@ -129,7 +129,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(2160)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         4K
                       </div>
                       2160p
@@ -139,7 +139,7 @@ export default function Download() {
                       className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
                       onClick={() => downloadCustom(4320)}
                     >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 text-green-900 dark:text-green-300 text-xl font-semibold">
+                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
                         8K
                       </div>
                       4320p
