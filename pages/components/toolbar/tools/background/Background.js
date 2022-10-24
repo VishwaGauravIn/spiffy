@@ -19,14 +19,14 @@ export default function Background({ img }) {
         setColors(clr);
       });
     }
-  }, [colors]);
+  }, [img]);
   useEffect(() => {
     if (colors.length !== 0) {
       document.getElementById(
         "my-node"
       ).style.backgroundColor = `rgb( ${colors[0]._rgb[0]} , ${colors[0]._rgb[1]} , ${colors[0]._rgb[2]})`;
     }
-  }, [colors.length !== 0]);
+  }, [colors]);
   return (
     <>
       <div

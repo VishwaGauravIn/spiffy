@@ -51,6 +51,7 @@ export default function Resize() {
                   </div>
                   <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-zinc-500 dark:text-zinc-200 transition-color duration-300 ease-in-out overflow-y-auto flex flex-wrap justify-center gap-4">
                     {/* content */}
+                    <Resizer app="instagram" label="None" aspect="auto" />
                     <Resizer app="instagram" label="Instagram Story" aspect={9/16} />
                   </div>
                 </div>

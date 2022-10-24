@@ -22,7 +22,6 @@ export default function Padding() {
   function setPadding() {
     localStorage.setItem("betterscreensort_p", pVal);
     document.getElementById("my-node").style.padding = `${pVal}rem`;
-    console.log(pVal)
   }
   return (
     <>
