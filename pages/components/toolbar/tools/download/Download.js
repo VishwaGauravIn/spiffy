@@ -1,5 +1,5 @@
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import React, { useEffect } from "react";
 import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
@@ -10,6 +10,7 @@ export default function Download() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDownloadButtonDisabled, setIsDownloadButtonDisabled] =
     useState(false);
+  const [downloadFormat, setDownloadFormat] = useState("png");
   // Click away handle
   const handleClickAway = () => {
     setIsVisible(false);
@@ -29,18 +30,27 @@ export default function Download() {
       })
       .then(function (dataUrl) {
         var link = document.createElement("a");
-        imgConverter(dataUrl, width, height, "png", size / height).then(
-          (dataUri) => {
-            link.download = "spiffy.png";
-            link.href = dataUri;
-            link.click();
-            toast.dismiss("start");
-            toast.success("Downloaded Successfully!");
-            setIsDownloadButtonDisabled(false);
-          }
-        );
+        imgConverter(
+          dataUrl,
+          width,
+          height,
+          downloadFormat,
+          size / height
+        ).then((dataUri) => {
+          link.download = `spiffy.${downloadFormat}`;
+          link.href = dataUri;
+          link.click();
+          toast.dismiss("start");
+          toast.success("Downloaded Successfully!");
+          setIsDownloadButtonDisabled(false);
+        });
       });
   }
+  useEffect(() => {
+    if (isVisible) {
+      document.getElementById(downloadFormat).checked = true;
+    }
+  }, [isVisible]);
   return (
     <>
       <div className="flex flex-col justify-center items-center rounded-xl cursor-pointer active:scale-95 transform transition-all ease-in-out duration-200">
@@ -81,68 +91,116 @@ export default function Download() {
                       onClick={() => setIsVisible(false)}
                     ></div>
                   </div>
-                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-zinc-500 dark:text-zinc-200 transition-color duration-300 ease-in-out overflow-y-auto flex flex-wrap justify-center gap-4">
+                  <div className=" transform text-base sm:text-lg md:text-xl p-4 py-8 max-h-96 w-full text-zinc-500 dark:text-zinc-200 transition-color duration-300 ease-in-out overflow-y-auto flex flex-col flex-wrap items-center gap-4">
                     {/* content */}
-
-                    {/* SD */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(480)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        SD
+                    <div className="flex justify-center flex-wrap gap-4">
+                      {/* SD */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(480)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          SD
+                        </div>
+                        480p
                       </div>
-                      480p
+                      {/* HD */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(720)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          HD
+                        </div>
+                        720p
+                      </div>
+                      {/* FHD */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(1080)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          FHD
+                        </div>
+                        1080p
+                      </div>
+                      {/* 2K */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(1440)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          2K
+                        </div>
+                        1440p
+                      </div>
+                      {/* 4K */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(2160)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          4K
+                        </div>
+                        2160p
+                      </div>
+                      {/* 8K */}
+                      <div
+                        className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
+                        onClick={() => downloadCustom(4320)}
+                      >
+                        <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
+                          8K
+                        </div>
+                        4320p
+                      </div>
                     </div>
-                    {/* HD */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(720)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        HD
+                    <div className="mt-4">
+                      <div
+                        className="flex gap-4 text-sm font-semibold"
+                        onChange={(e) => setDownloadFormat(e.target.value)}
+                      >
+                        <span className="flex justify-center items-center">
+                          <input
+                            type="radio"
+                            name="format"
+                            id="png"
+                            value="png"
+                            className="w-4 h-4 accent-emerald-300 mr-2"
+                          />
+                          <label>PNG</label>
+                        </span>
+                        <span className="flex justify-center items-center">
+                          <input
+                            type="radio"
+                            name="format"
+                            id="jpg"
+                            value="jpg"
+                            className="w-4 h-4 accent-emerald-300 mr-2"
+                          />
+                          <label>JPG</label>
+                        </span>
+                        <span className="flex justify-center items-center">
+                          <input
+                            type="radio"
+                            name="format"
+                            id="bmp"
+                            value="bmp"
+                            className="w-4 h-4 accent-emerald-300 mr-2"
+                          />
+                          <label>BMP</label>
+                        </span>
+                        <span className="flex justify-center items-center">
+                          <input
+                            type="radio"
+                            name="format"
+                            id="webp"
+                            value="webp"
+                            className="w-4 h-4 accent-emerald-300 mr-2"
+                          />
+                          <label>WEBP</label>
+                        </span>
                       </div>
-                      720p
-                    </div>
-                    {/* FHD */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(1080)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        FHD
-                      </div>
-                      1080p
-                    </div>
-                    {/* 2K */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(1440)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        2K
-                      </div>
-                      1440p
-                    </div>
-                    {/* 4K */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(2160)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        4K
-                      </div>
-                      2160p
-                    </div>
-                    {/* 8K */}
-                    <div
-                      className="w-20 aspect-square text-sm font-semibold flex flex-col justify-center items-center cursor-pointer group"
-                      onClick={() => downloadCustom(4320)}
-                    >
-                      <div className="w-16 aspect-square rounded hover:shadow-none group-active:scale-95 ease-in-out mb-2 flex justify-center items-center ring ring-green-900 dark:ring-green-300 hover:bg-green-900 dark:hover:bg-green-300 dark:hover:text-zinc-800 hover:text-zinc-200 text-green-900 dark:text-green-300 text-xl font-semibold">
-                        8K
-                      </div>
-                      4320p
                     </div>
                   </div>
                 </div>
