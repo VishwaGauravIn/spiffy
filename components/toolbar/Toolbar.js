@@ -10,7 +10,7 @@ import Resize from "./tools/resize/Resize";
 export default function Toolbar({ onImageChange, img }) {
   return (
     <>
-      <div className="absolute bottom-0 w-full flex justify-center z-10 py-5">
+      <div className="fixed bottom-0 w-full flex justify-center z-10 py-5">
         <div className="w-full sm:w-10/12 flex flex-wrap justify-center items-center gap-4">
           {/* If no image selected we will show big upload button */}
           {!img && (
