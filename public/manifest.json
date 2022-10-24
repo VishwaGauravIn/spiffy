@@ -6,27 +6,42 @@
     "start_url": "/",
     "name": "Spiffy - Aesthetic Screenshots",
     "short_name": "Spiffy",
-    "description": "Spiffy converts your boring screenshots into aesthetic and beautiful screenshots. Upto 8K download, Custom & AI Background, Shadows, Corners & more.",
+    "description": "Spiffy converts your boring screenshots into aesthetic and beautiful screenshots. Upto 8K download, Custom &amp; AI Background, Shadows, Corners &amp; more.",
     "icons": [
-        {
-            "src": "/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
+      {
+        "src": "/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon-384x384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon-512x512.png",
+        "sizes": "any",
+        "type": "image/png"
+      }
+    ],
+    "lang": "en",
+    "orientation": "portrait",
+    "categories": [
+      "entertainment",
+      "personalization",
+      "photo",
+      "productivity",
+      "social",
+      "utilities"
     ]
-}
+  }
