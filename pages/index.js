@@ -49,6 +49,8 @@ export default function Home() {
           property="twitter:image"
           content="https://spiffy.itsvg.in/og.png"
         />
+        {/* PWA */}
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       {/* Google Analytics */}
       <Script
