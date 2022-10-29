@@ -18,9 +18,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Spiffy - Aesthetic Screenshots</title>
+        <title>Spiffy - Aesthetic Screenshots ✨</title>
         <link rel="icon" href="/logo.png" />
-        <meta name="title" content="Spiffy - Aesthetic Screenshots" />
+        <meta name="title" content="Spiffy - Aesthetic Screenshots ✨" />
         <meta
           name="description"
           content="Spiffy converts your boring screenshots into aesthetic and beautiful screenshots. Upto 8K download, Custom & AI Background, Shadows, Corners & more."
@@ -29,7 +29,7 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://spiffy.itsvg.in/" />
-        <meta property="og:title" content="Spiffy - Aesthetic Screenshots" />
+        <meta property="og:title" content="Spiffy - Aesthetic Screenshots ✨" />
         <meta
           property="og:description"
           content="Spiffy converts your boring screenshots into aesthetic and beautiful screenshots. Upto 8K download, Custom & AI Background, Shadows, Corners & more."
@@ -39,7 +39,7 @@ export default function Home() {
         <meta property="twitter:url" content="https://spiffy.itsvg.in/" />
         <meta
           property="twitter:title"
-          content="Spiffy - Aesthetic Screenshots"
+          content="Spiffy - Aesthetic Screenshots ✨"
         />
         <meta
           property="twitter:description"
