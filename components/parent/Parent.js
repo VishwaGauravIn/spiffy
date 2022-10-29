@@ -25,7 +25,7 @@ export default function Parent({ img }) {
                     }] cursor-move`
                   : `max-w-full sm:max-h-full max-h-96 rounded-md aspect-[${
                       imgW / imgH
-                    }] dark:invert dark:saturate-200 dark:sepia cursor-move`
+                    }] cursor-move`
               }
             />
           </Draggable>
