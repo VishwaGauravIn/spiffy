@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import Background from "./tools/background/Background";
 import Corners from "./tools/corners/Corners";
@@ -6,8 +6,11 @@ import Padding from "./tools/padding/Padding";
 import Shadow from "./tools/shadow/Shadow";
 import Download from "./tools/download/Download";
 import Resize from "./tools/resize/Resize";
+import useClipboardImage from "./tools/clipboard/Clipboard";
+
 
 export default function Toolbar({ onImageChange, img }) {
+  useClipboardImage(onImageChange);
   return (
     <>
       <div className="fixed bottom-0 w-full flex justify-center z-10 py-5">
