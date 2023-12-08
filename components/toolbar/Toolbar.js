@@ -7,6 +7,7 @@ import Shadow from "./tools/shadow/Shadow";
 import Download from "./tools/download/Download";
 import Resize from "./tools/resize/Resize";
 import useClipboardImage from "./tools/clipboard/Clipboard";
+import CopyClipboard from "./tools/clipboard/CopyClipboard";
 
 
 export default function Toolbar({ onImageChange, img }) {
@@ -38,6 +39,7 @@ export default function Toolbar({ onImageChange, img }) {
                     Upload
                   </span>
                 </button>
+                <CopyClipboard />
                 <Download />
                 <Background img={img} />
                 <Resize />
